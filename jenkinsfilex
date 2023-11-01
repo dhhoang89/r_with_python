@@ -1,0 +1,12 @@
+pipeline {
+    agent {
+        docker { image 'dhhoang89/docker-agent' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
