@@ -1,7 +1,11 @@
 /*Jenkinsfile (Declarative Pipeline) */
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'docker-slave-test' } }
+    agent { 
+        node {
+            label 'docker-agent-python'
+            }
+    }
     stages {
         stage('build') {
             steps {
